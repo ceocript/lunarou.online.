@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunaro - A Heroína da Lua</title>
+  <meta name="description" content="Lunaro - a heroína que nasceu na lua e vai revolucionar o mercado cripto. Veja o contador regressivo, a história épica, gráfico de previsão e prepare-se para o lançamento." />
+  <meta property="og:title" content="Lunaro - A Heroína da Lua" />
+  <meta property="og:description" content="Prepare-se para o lançamento épico da Lunaro, a heroína cripto que resistiu ao bear market lunar. História, gráficos e muito mais." />
+  <meta property="og:image" content="https://bafybeib6vdot45pcinizabl66uby4f4fbucatlkxdppschbi4wubsb75bu.ipfs.w3s.link/947f2bde-02e0-4969-82fb-ca917ae0b992.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lunaro - A Heroína da Lua" />
+  <meta name="twitter:description" content="A história de Lunaro, a defensora do Web3, está prestes a começar. Junte-se à revolução lunar." />
+  <meta name="twitter:image" content="https://bafybeib6vdot45pcinizabl66uby4f4fbucatlkxdppschbi4wubsb75bu.ipfs.w3s.link/947f2bde-02e0-4969-82fb-ca917ae0b992.png" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #9c27b0;
+    }
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      filter: brightness(0.8);
+    }
+    .story, .launch, .graph, .contact, .investor {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .story h2, .launch h2, .graph h2, .contact h2, .investor h2 {
+      color: #ff4081;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: #4caf50;
+    }
+    canvas {
+      max-width: 100%;
+      background: #222;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      color: #ccc;
+    }
+    .web3-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #9c27b0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .web3-btn:hover {
+      background: #7b1fa2;
+    }
+    .social {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #00e5ff;
+      text-decoration: none;
+    }
+    .investor-form input, .investor-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background: #222;
+      color: #fff;
+    }
+    .investor-form button {
+      background-color: #9c27b0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .investor-form button:hover {
+      background-color: #7b1fa2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lunaro - A Heroína da Lua</h1>
+    <p>Prepare-se para o lançamento! Faltam:</p>
+    <div class="countdown" id="countdown"></div>
+    <p>Live de lançamento no YouTube: <strong>Canal Lunaro</strong></p>
+  </header>
+
+  <img class="hero-image" src="https://bafybeie4manxegktvarhlomnwlipni3euibkhw4nzf6jnkvtuxpfw5oufm.ipfs.w3s.link/c73d3a5c-d1fb-4e15-997e-4188581a85fb%20(1).png" alt="Heroína Lunaro">
+
+  <section class="story">
+    <h2>A História de Lunaro</h2>
+    <p>No silêncio da lua, nasceu Lunaro, uma heroína esquecida pelas eras. Durante milênios, ela resistiu às trevas do bear market, protegendo sua luz e esperando seu destino. Agora, com o brilho do Web3, ela retorna, mais forte, para libertar o mundo das sombras. Seu destino? Encontrar o Príncipe Pool e restaurar o equilíbrio no universo cripto.</p>
+  </section>
+
+  <section class="launch">
+    <h2>Data de Lançamento</h2>
+    <p>Faltam apenas <strong>25 dias</strong> para a Lunaro invadir as DEXs! Pool planejada na <strong>Raydium</strong> ou <strong>Orca</strong>.</p>
+    <button class="web3-btn">Conectar Carteira Web3</button>
+  </section>
+
+  <section class="graph">
+    <h2>Previsão de Preço</h2>
+    <canvas id="priceChart" width="800" height="400"></canvas>
+  </section>
+
+  <section class="contact">
+    <h2>Contato</h2>
+    <p>Envie sua mensagem ou proposta: <a href="mailto:juniorcaeb@gmail.com">juniorcaeb@gmail.com</a></p>
+    <div class="social">
+      <a href="https://github.com/ceocript" target="_blank">GitHub</a>
+      <a href="https://discord.gg/5T4uekaw" target="_blank">Discord</a>
+    </div>
+  </section>
+
+  <section class="investor">
+    <h2>Pré-Apresentação para Investidores</h2>
+    <img src="https://bafybeihei3dpfum7k34cyutx2hpfksbprdtkufhu2sfrzhj6esjq5su75u.ipfs.w3s.link/Lunaro_%20A%20Moeda%20da%20Lua%20(1).png" alt="Pré-apresentação para Investidores" style="width: 100%; max-width: 900px; margin: auto;">
+
+    <h2>Formulário para Investidores</h2>
+    <form class="investor-form" action="mailto:juniorcaeb@gmail.com" method="POST" enctype="text/plain">
+      <label for="name">Nome Completo</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Mensagem</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Enviar Proposta</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lunaro. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    const countdown = document.getElementById("countdown");
+    const launchDate = new Date("2025-05-25T00:00:00Z").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      if (distance < 0) {
+        countdown.innerHTML = "Lançado!";
+        clearInterval(timer);
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Chart
+    const canvas = document.getElementById('priceChart');
+    const ctx = canvas.getContext('2d');
+    const prices = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1, 1];
+    const labels = ["Abr", "1 Mai", "10 Mai", "17 Mai", "25 Mai", "15 Jun", "27 Jun"];
+
+    ctx.beginPath();
+    ctx.moveTo(0, 400 - prices[0] * 4000);
+    prices.forEach((price, i) => {
+      ctx.lineTo(i * 120, 400 - price * 4000);
+    });
+    ctx.strokeStyle = '#00e5ff';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.fillStyle = '#fff';
+    ctx.font = '16px sans-serif';
+    labels.forEach((label, i) => {
+      ctx.fillText(label, i * 120, 390);
+    });
+  </script>
+</body>
+</html>
